@@ -10,6 +10,7 @@ My perceptron is created in Python, in a class form. The perceptron is than test
 
 ## Technologies
 * Python 3.6
+
 Libraries:
 * numpy
 * matplotlib

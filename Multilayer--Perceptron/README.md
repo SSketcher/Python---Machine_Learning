@@ -1,4 +1,4 @@
-# Perceptron
+# Multilayer perceptron
 ## General info
 This project is about creating multilayer perceptron from scratch. What perceptron is ?
 

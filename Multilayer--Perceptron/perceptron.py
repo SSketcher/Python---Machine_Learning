@@ -76,7 +76,7 @@ class Perceptron(object):
     def __cost_func(self, acc: list()):       #calculating valeu of cost function
         y = np.array(acc[:][0])
         yp = np.array(acc[:][1])
-        return sum(o.5 * (y - yp))
+        return sum(0.5 * (y - yp))
 
     def __accuracy(self,acc: list()):       #calculating accuracy of predictions
         total_population = len(acc)

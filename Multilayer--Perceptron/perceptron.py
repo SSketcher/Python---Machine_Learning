@@ -11,61 +11,81 @@ class Perceptron(object):
             layer.set_weights(prev_layer)
             prev_layer = layer
 
-    def fit(self):
-        pass
+    def fit(self, X: np.array, Y:np.array, epochs = 1, rate = 0.01):
+        n = len(self.layers) - 2
+        for e in range(epochs):
+            for x, y in zip(X, Y):
+                Z = []
+                A = []
+                W = []
+                acc = []
+                A.append(x)
+                dJdW = []
+                for layer in self.layers[1:]:
+                    zi = np.dot(layer.weights, x) + layer.bias
+                    ai = self.__activation_fnc(zi)
+                    W.append(layer.weights)
+                    Z.append(zi)
+                    A.append(ai)
+                    x = zi
+
+                W.reverse()
+                A.reverse()
+                Z.reverse()
+                acc.append((y, A[0]))
+
+                dN = np.multiply(-(y - A[0]), self.__activation_fnc_div(Z[0]))
+                print(dN)
+                dJdW.append(np.dot(A[0].T, dN))
+                print(dJdW[0])
+
+                for i in range(n):
+                    print(i)
+                    print(dJdW[i])
+                    print(W[i])
+                    print("----------------------")
+                    dN = np.dot(dJdW[i], W[i]) * self.__activation_fnc_div(Z[1 + i])
+                    print(dN)
+                    print(A[1 + i])
+                    dJdW.append(np.dot(A[1 + i].T, dN.T))
+                
+                for i in range(n + 1):
+                    self.layers[1 + i].weights -= rate * dJdW[i]
+
+            print("------- Epoch " + str(e) + " -------")
+            print("Accuracy: ", self.__accuracy(acc))
+            print("Cost: ", self.__cost_func(acc))
+                
 
     def eval(self,X: np.array, Y: np.array):
         acc = []
         for x, y in zip(X, Y):
-            yp = predict(x)
+            yp = self.predict(x)
             acc.append((y, yp))
         return self.__accuracy(acc)
 
     def predict(self, X: np.array):
         for layer in self.layers[1:]:
-            Xi = np.dot(X, layer.weights[:][1:]) - layer.weights[:][0]
+            Xi = np.dot(layer.weights, X) + layer.bias
             output = self.__activation_fnc(Xi)
+            X = output
         return  output
 
-    def __gradient(self,X: np.array, Y: np.array, Yp: np.array):
-        n = len(self.layers) - 2
-        for i in range(n):
-            deltJ = np.multiply(-(Y - Yp), self.__activation_fnc_div())
-            dJdW = np.dot()
-
-    def __activation_fnc(self,X):     #function applying selected activation function
+    def __activation_fnc(self, X: np.array):     #function applying selected activation function
         if self.activation == 'relu':
-            return self.__relu(X)
+            return np.log((1 + np.exp(X)), np.e)        #rectifier activation function
         elif self.activation == 'sigmoid':
-            return self.__sigmoid(X)
+            return 1 / (1 + np.exp(-X))       #sigmoid activation function
         elif self.activation == 'heaviside':
-            return self.__heaviside(X)
+            return np.where(X >= 0, 1, 0)     #heaviside activation function
 
-    def __activation_fnc_div(self,X):     #function applying selected activation function
+    def __activation_fnc_div(self,X):     #function applying derivative of selected activation function
         if self.activation == 'relu':
-            return self.__relu_div(X)
+            return 1 / (1 + np.exp(-X))
         elif self.activation == 'sigmoid':
-            return self.__sigmoid_div(X)
+            return np.exp(X) / (1 + np.exp(-X))
         elif self.activation == 'heaviside':
-            return self.__heaviside_div(X)
-
-    def __relu(self, X: np.array):     #rectifier activation function
-        return np.log((1 + np.exp(X)), np.e)
-
-    def __relu_div(self, X: np.array):
-        return 1 / (1 + np.exp(-X))
-
-    def __sigmoid(self, X: np.array):       #sigmoid activation function
-        return 1 / (1 + np.exp(-X))
-
-    def __sigmoid_div(self, X: np.array):
-        return np.exp(X) / (1 + np.exp(-X))
-
-    def __heaviside(self, X: np.array):     #heaviside activation function
-        return np.where(X >= 0, 1, 0)
-
-    def __heaviside_div(self, X: np.array):
-        return np.where(X == 0, 1, 0)
+            return np.where(X == 0, 1, 0)
 
     def __randomize(self, data: np.array, labels: np.array):        #function shuffling dataset
         df = np.hstack((data, labels))
@@ -96,6 +116,8 @@ class Layer(object):
     def __init__(self,size = 1):
         self.size = size
         self.weights = None
+        self.bias = np.zeros(self.size)
+
 
     def set_weights(self, prev_layer):
-        self.weights = np.zeros((self.size, prev_layer.size + 1))
+        self.weights = np.random.rand(self.size, prev_layer.size)

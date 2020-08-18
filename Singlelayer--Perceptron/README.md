@@ -17,7 +17,8 @@ Libraries:
 * pandas
 
 ## Sources and helpful materials
-[POLITECHNIKA POZNAŃSKA](http://www.cs.put.poznan.pl/rklaus/assn/percep.htm)//
-[PJATK](http://users.pja.edu.pl/~msyd/wyk-nai/perceptron3-pl.pdf)//
-[Perceptron Wiki](https://en.wikipedia.org/wiki/Perceptron)//
+[POLITECHNIKA POZNAŃSKA](http://www.cs.put.poznan.pl/rklaus/assn/percep.htm)
 
+[PJATK](http://users.pja.edu.pl/~msyd/wyk-nai/perceptron3-pl.pdf)
+
+[Perceptron Wiki](https://en.wikipedia.org/wiki/Perceptron)

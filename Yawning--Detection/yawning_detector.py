@@ -33,7 +33,7 @@ while True:
         if pred == 1:
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 1)
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(frame, 'Ziewa', (round(x1+(x2-x1)/2), y1-2), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
+            cv2.putText(frame, 'Yawning', (round(x1+(x2-x1)/2), y1-2), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
     cv2.imshow("Frame", frame)
     key = cv2.waitKey(1)
     if key == 27:

@@ -2,6 +2,8 @@
 ## General info
 Image processing project using python and openCV for detecting yawning.
 
+![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Yawning--Detection/resources/Yawning.png?raw=true)
+
 
 ## Technologies
 * Python 3.6

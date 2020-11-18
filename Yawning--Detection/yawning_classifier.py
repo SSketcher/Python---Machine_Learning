@@ -21,4 +21,4 @@ def svm_learn(DataFrame):
         if e == Yeval[i]:
             truePred += 1
     print('Accuracy of the model: ', str(truePred/len(Xeval)))
-    dump(clf, 'yawing_classifier.joblib') 
+    dump(clf, 'models\yawing_classifier.joblib') 

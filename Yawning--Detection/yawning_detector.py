@@ -6,7 +6,7 @@ import dlib
 import data_processing as dp
 
 
-cap = cv2.VideoCapture('resources\YawningPeople480p.avi')
+cap = cv2.VideoCapture(0)#                         'resources\YawningPeople480p.avi')
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("models\shape_predictor_68_face_landmarks.dat")

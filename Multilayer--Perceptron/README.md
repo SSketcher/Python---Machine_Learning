@@ -15,11 +15,11 @@ This project is about creating multilayer perceptron from scratch. What perceptr
 - [ ] test the witten code
 
 ## Technologies
-* Python 3.6
+* Python 3.7.3
 
 Libraries:
-* numpy
-* pandas
+* NumPy
+* Pandas
 
 ## Sources and helpful materials
 [Welch Labs YouTube](https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLiaHhY2iBX9hdHaRr6b7XevZtgZRa1PoU)

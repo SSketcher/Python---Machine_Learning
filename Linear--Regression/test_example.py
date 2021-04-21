@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 eps = np.random.randint(5, size=50)/2
 x = np.linspace(1.0, 50.0, num = 50)
-y = 3/4 * X + 2
+y = 3/4 * x + 2
 
 X = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
 Y = np.array([3.5, 2.0, 5.0 , 2.5, 6.0 , 7.2, 5.4 , 8, 7.5, 11.2, 10.5, 13.4, 14.0, 13.0, 16.5])

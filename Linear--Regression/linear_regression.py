@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 
 class Regression(object):
     def __init__(self, unites = 1):

@@ -1,4 +1,4 @@
-# Linear Regression
+# Univariate Linear Regression
 ## General info
 This project is about creating simple linear regression class. What linear regression is ?
 
@@ -16,6 +16,8 @@ Libraries:
 * Matplotlib
 
 ## Sources and helpful materials
+[Univariate Linear Regression From Scratch With Python](https://satishgunjal.com/univariate_lr/)
+
 [Linear Regression using Gradient Descent](https://towardsdatascience.com/linear-regression-using-gradient-descent-97a6c8700931)
 
 [Linear regression Wiki](https://en.wikipedia.org/wiki/Linear_regression)

@@ -24,10 +24,7 @@ class Regression(object):
             length = float(len(Y))
             acc = [Y]
             Ypred = self.predict(X)
-            print(Y)
-            print(Ypred)
-            print(Y - Ypred)
-            dm = (-2.0/length) * sum(X * (Y - Ypred))
+            dm = (-2.0/length) * sum(X * (Y - Ypred))       #Greaient decent
             db = (-2.0/length) * sum(Y - Ypred)
             self.m = self.m - (rate * dm)
             self.b = self.b - (rate * db)

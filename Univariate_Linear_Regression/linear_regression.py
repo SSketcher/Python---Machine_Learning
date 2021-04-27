@@ -1,13 +1,11 @@
 import numpy as np
 
 class Regression(object):
-    def __init__(self, unites = 1):
+    def __init__(self):
         """
         instantiate a new Linear Regression model
-
-        :param unites: number of features
         """
-        self.m = np.zeros(unites)
+        self.m = 0
         self.b = 0
         self.log = []       #log contains valeu of cost function and m and b for each epoch
 
@@ -45,6 +43,6 @@ class Regression(object):
 
     def __cost_func(self, acc):     #calculates the cost function (mean squared error)
         length = len(acc[0])
-        return (1/length) * sum(err**2 for err in (acc[0] - acc[1]))    #acc[0] = Y, acc[1] = Ypred
+        return (1.0/length) * sum(err**2 for err in (acc[0] - acc[1]))    #acc[0] = Y, acc[1] = Ypred
 
 

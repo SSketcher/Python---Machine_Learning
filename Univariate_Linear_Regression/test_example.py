@@ -19,7 +19,7 @@ plt.grid(True)
 plt.show()
 
 
-model = Regression(unites = 1)
+model = Regression()
 model.fit(X, Y, epochs = 50)
 
 Yp = model.predict(X)

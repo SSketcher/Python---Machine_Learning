@@ -13,6 +13,7 @@ This project is about creating multidimensional linear regression class, also no
 Libraries:
 * NumPy
 * Matplotlib
+* Pandas
 
 ## Sources and helpful materials
 [Multivariate Linear Regression From Scratch With Python](https://satishgunjal.com/multivariate_lr/)

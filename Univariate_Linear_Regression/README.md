@@ -14,8 +14,7 @@ Test example consist of a few linearly distributed points with random noise. On 
 The algorithm worked for 50 epoch to fit the regression line into the dataset.
 ![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Univariate_Linear_Regression/resources/Figure_2.png?raw=true)
 
-Visualization of change in value of cost function.
-
+Visualization of change in value of cost function.        
 ![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Univariate_Linear_Regression/resources/Figure_3.png?raw=true)
 
 ## Technologies

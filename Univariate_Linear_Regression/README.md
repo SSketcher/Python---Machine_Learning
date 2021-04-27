@@ -8,6 +8,15 @@ This project is about creating simple linear regression class. What linear regre
 * [linear_regression.py](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Linear--Regression/linear_regression.py) - main python file containing class performing linear regression.
 * [test_example.py](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Linear--Regression/test_example.py) - python script using the linear regression model to fit regression line for simple linear dataset with random noise.
 
+Test example consist of a few linearly distributed points with random noise. On this dataset later it's performed linear regression.
+![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Univariate_Linear_Regression/resources/Figure_1.png?raw=true)
+
+The algorithm worked for 50 epoch to fit the regression line into the dataset.
+![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Univariate_Linear_Regression/resources/Figure_2.png?raw=true)
+
+Visualization of change in value of cost function.
+![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Univariate_Linear_Regression/resources/Figure_3.png?raw=true)
+
 ## Technologies
 * Python 3.7.3
 

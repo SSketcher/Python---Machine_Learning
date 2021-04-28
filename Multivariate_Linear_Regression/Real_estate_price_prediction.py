@@ -4,13 +4,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-data = pd.read_csv('Real estate.csv', header = 0)
+data = pd.read_csv('resources/Real estate.csv', header = 0)
 data.pop('No')
 headers = [str(col) for col in data.columns]
 data = data.sample(frac=1)
 
 X = data.iloc[:, :6].values
 Y = data.iloc[:, 6:].values
+
+print(X)
+print(Y)
+c = input("----------STOP----------")
 
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#7f7f7f']
 
@@ -37,9 +41,14 @@ ax.scatter(X[:, 4], X[:, 5], Y, marker='o', s=4, color='red', edgecolor='red')
 plt.show()
 
 X = X.reshape((len(X), 6, 1))
-Y = Y.reshape((len(Y), 1))
-
-print(X[0] * X[1])
+Y = Y.reshape((len(Y), 1, 1))
+print(X)
+print(Y)
+c = input("----------STOP----------")
 
 model = Regression(unites = 6)
 model.fit(X, Y, epochs = 10)
+
+logs = model.log
+for log in logs:
+    print(log)

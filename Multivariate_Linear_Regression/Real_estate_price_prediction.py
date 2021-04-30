@@ -12,10 +12,6 @@ data = data.sample(frac=1)
 X = data.iloc[:, :6].values
 Y = data.iloc[:, 6:].values
 
-print(X)
-print(Y)
-c = input("----------STOP----------")
-
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#7f7f7f']
 
 fig, axs = plt.subplots(2, 3)
@@ -42,12 +38,10 @@ plt.show()
 
 X = X.reshape((len(X), 6, 1))
 Y = Y.reshape((len(Y), 1, 1))
-print(X)
-print(Y)
-c = input("----------STOP----------")
+
 
 model = Regression(unites = 6)
-model.fit(X, Y, epochs = 10)
+model.fit(X, Y, epochs = 10, batch_size = 50)
 
 logs = model.log
 for log in logs:

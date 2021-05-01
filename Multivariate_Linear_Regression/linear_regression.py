@@ -27,20 +27,16 @@ class Regression(object):
             batchs = self.__batch(X, Y, batch_size)     #Shuffling training set and dividing it into batches
             acc = [[],[]]
             for batch in batchs:
-                Y_pred = []
-                Xb = []
-                Yb = []
-                for elm in batch:
-                    x = elm[:self.unites]
-                    Xb.append(x)
-                    y = elm[self.unites:]
-                    Yb.append(y)
-                    y_pred = self.predict(x)
+                Xb = batch[:, :self.unites]
+                Yb = batch[:, self.unites:]
+                Y_pred = []                
+                for i in range(len(batch)):
+                    y_pred = self.predict(Xb[i])
                     print(y_pred)
                     Y_pred.append(y_pred)
-                    acc[0].append(y)
-                    acc[1].append(y_pred)
-                    c = input('STOP')
+                acc[0].extend(Yb)
+                acc[1].extend(np.array(Y_pred))
+                _ = input('STOP')
                 self.__grad_decent(Xb, Yb, Y_pred, rate)       #Applying batch gradient descent
             print("------- Epoch " + str(e + 1) + " -------")
             print("Cost: ", self.__cost_func(acc))
@@ -105,7 +101,7 @@ class Regression(object):
 
     def __grad_decent(self, X, Y, Y_pred, rate):
         length = len(Y)
-        dJ = [[], []]              #This is sum of a partial differentials of the cost function(times length) for each data point
+        dJ = [0, 0]              #This is sum of a partial differentials of the cost function(times length) for each data point
         for i in range(length):
             dJ[0] += (Y_pred[i] - Y[i])         #dJ has shape of 1 x 1
             dJ[1] += (Y_pred[i] - Y[i]) * X[i]          #dJ has shape of features x 1

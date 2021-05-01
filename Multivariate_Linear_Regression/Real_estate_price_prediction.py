@@ -19,7 +19,7 @@ fig.suptitle('Effect of a given parameter on real estate price')
 number = 0
 for i in range(2):
     for j in range(3):
-        axs[i, j].scatter(X[:, number], Y, color = colors[number], marker = 'h')
+        axs[i, j].scatter(X[:, number], Y, color = colors[number], marker = 'h', s = 3.5)
         number += 1
 number = 0
 for ax in axs.flat:

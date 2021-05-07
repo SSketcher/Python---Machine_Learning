@@ -9,8 +9,8 @@ data.pop('No')
 headers = [str(col) for col in data.columns]
 data = data.sample(frac=1)
 
-X = data.iloc[:, :6].values
-Y = data.iloc[:, 6:].values
+X = data.iloc[:, :6].to_numpy()
+Y = data.iloc[:, 6:].to_numpy() 
 
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#7f7f7f']
 
@@ -36,13 +36,15 @@ ax.set_zlabel("Price per unit area")
 ax.scatter(X[:, 4], X[:, 5], Y, marker='o', s=4, color='red', edgecolor='red')
 plt.show()
 
-X = X.reshape((len(X), 6, 1))
-Y = Y.reshape((len(Y), 1, 1))
-
-
 model = Regression(unites = 6)
-model.fit(X, Y, epochs = 10, batch_size = 50)
+X, mu, sugma = model.features_norm(X)
+model.fit(X, Y, epochs = 100, batch_size = 105, rate = 0.05)
 
-logs = model.log
-for log in logs:
-    print(log)
+x = np.linspace(1.0, 100.0, num = 100)
+cost = [element[0] for element in model.log]
+
+plt.plot(x, cost)
+plt.xlabel('Epochs')
+plt.ylabel('Cost function')
+plt.title('Cost function for each epoch')
+plt.show()

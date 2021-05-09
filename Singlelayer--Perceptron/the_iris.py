@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
-df = pd.read_csv('iris.csv', header = 0)
+df = pd.read_csv('resources/iris.csv', header = 0)
 labels = df.iloc[:, 4].values
 data = df.iloc[:, 0:3].values
 labels = np.reshape(labels, (len(labels), 1))

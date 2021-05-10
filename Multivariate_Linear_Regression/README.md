@@ -7,7 +7,7 @@ This project is about creating multidimensional linear regression class, also no
 
 * [linear_regression.py](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Multivariate_Linear_Regression/linear_regression.py) - main python file containing class performing linear regression.
 * [Real_estate_price_prediction.py](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Multivariate_Linear_Regression/Real_estate_price_prediction.py) - python script using the linear regression model to predict real estate price.
-* [resources/Real_estate.csv](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Multivariate_Linear_Regression/resources/Real estate.csv) - csv file with data.
+* [resources/Real_estate.csv](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Multivariate_Linear_Regression/resources/Real_estate.csv) - csv file with data.
 
 Visualization the influence of each feature in the dataset, on the real estate price.
 ![alt text](https://github.com/SSketcher/Python---Machine_Learning/blob/master/Multivariate_Linear_Regression/resources/Figure_1.png?raw=true)

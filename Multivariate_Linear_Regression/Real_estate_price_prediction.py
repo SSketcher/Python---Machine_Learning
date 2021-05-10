@@ -6,7 +6,7 @@ from mpl_toolkits import mplot3d
 
 
 #Loading data
-data = pd.read_csv('resources/Real estate.csv', header = 0)
+data = pd.read_csv('resources/Real_estate.csv', header = 0)
 data.pop('No')
 headers = [str(col) for col in data.columns]
 data = data.sample(frac=1)

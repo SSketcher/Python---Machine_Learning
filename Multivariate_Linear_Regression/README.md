@@ -36,4 +36,6 @@ Libraries:
 
 [Line plot styles in Matplotlib](https://www.pythoninformer.com/python-libraries/matplotlib/line-plots/)
 
-[Pyplot Doc](https://matplotlib.org/tutorials/introductory/pyplot.html)
+[Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
+
+[NumPy Documentation](https://numpy.org/doc/stable/contents.html)
